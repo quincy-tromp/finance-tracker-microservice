@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore FinanceTracker.sln
+
+      - name: Build solution
+        run: dotnet build FinanceTracker.sln --configuration Release --no-restore
+
+      - name: Find and run test DLLs
+        shell: bash
+        run: |
+          echo "Searching for test DLLs..."
+          test_dlls=$(find . -type f -regex '.*\(Tests\|Test\)\.dll$' -path '*/bin/Release/*')
+
+          if [ -z "$test_dlls" ]; then
+            echo "No test DLLs found!"
+            exit 1
+          fi
+
+          mkdir -p TestResults
+
+          for dll in $test_dlls; do
+            echo "Running tests in $dll"
+            dotnet test "$dll" --no-build --logger "trx;LogFileName=$(basename "$dll").trx" || exit 1
+          done
+
+          find . -name '*.trx' -exec mv {} TestResults/ \;
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/
+
+      - name: Publish test results to PR
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: .NET Tests
+          path: TestResults/*.trx
+          reporter: dotnet-trx
+          fail-on-error: true
