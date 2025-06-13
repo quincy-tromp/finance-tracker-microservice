@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore FinanceTracker.sln
+        run: dotnet restore FinanceTracker/FinanceTracker.sln
 
       - name: Build solution
         run: dotnet build FinanceTracker/FinanceTracker.sln --configuration Release --no-restore
