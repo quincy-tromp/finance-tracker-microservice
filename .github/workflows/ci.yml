@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore FinanceTracker.sln
 
       - name: Build solution
-        run: dotnet build FinanceTracker.sln --configuration Release --no-restore
+        run: dotnet build FinanceTracker/FinanceTracker.sln --configuration Release --no-restore
 
       - name: Find and run test DLLs
         shell: bash
