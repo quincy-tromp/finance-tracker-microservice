@@ -7,15 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transactions", "Transactions", "{F9F5EB6B-B531-468E-B4A7-10DA32AFEBA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions.API", "Services.Transactions.API\Transactions.API.csproj", "{F1D01832-125E-4CBE-BCBC-69131D627B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transactions.API", "Services.Transactions.API\Transactions.API.csproj", "{F1D01832-125E-4CBE-BCBC-69131D627B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions.Core", "Services.Transactions.Core\Transactions.Core.csproj", "{F818D473-2E8C-4AEC-B836-71DC56E3A8E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transactions.Core", "Services.Transactions.Core\Transactions.Core.csproj", "{F818D473-2E8C-4AEC-B836-71DC56E3A8E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions.Infrastructure", "Services.Transactions.Infrastructure\Transactions.Infrastructure.csproj", "{68CB86A3-BEF4-41EC-9952-88D9A3655CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transactions.Infrastructure", "Services.Transactions.Infrastructure\Transactions.Infrastructure.csproj", "{68CB86A3-BEF4-41EC-9952-88D9A3655CB1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AC5B908-634F-4263-8B2A-AC1596983A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions.UnitTest", "Transactions.UnitTest\Transactions.UnitTest.csproj", "{136923AC-4216-45D0-9591-A415422100E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transactions.UnitTest", "Transactions.UnitTest\Transactions.UnitTest.csproj", "{136923AC-4216-45D0-9591-A415422100E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{6CFAB753-845B-41D1-A39A-3CCB9419DF1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceTracker.Web", "FinanceTracker.Web\FinanceTracker.Web.csproj", "{5AB25BED-29CF-4016-A057-525D4035D371}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{3C3FEE45-0203-407B-9C06-CF0E7BF3E1D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{CF0CA517-838B-4FC4-9601-599EC1BB3202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,10 @@ Global
 		{136923AC-4216-45D0-9591-A415422100E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{136923AC-4216-45D0-9591-A415422100E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{136923AC-4216-45D0-9591-A415422100E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB25BED-29CF-4016-A057-525D4035D371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB25BED-29CF-4016-A057-525D4035D371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB25BED-29CF-4016-A057-525D4035D371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB25BED-29CF-4016-A057-525D4035D371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +62,7 @@ Global
 		{68CB86A3-BEF4-41EC-9952-88D9A3655CB1} = {F9F5EB6B-B531-468E-B4A7-10DA32AFEBA3}
 		{8AC5B908-634F-4263-8B2A-AC1596983A7F} = {F9F5EB6B-B531-468E-B4A7-10DA32AFEBA3}
 		{136923AC-4216-45D0-9591-A415422100E2} = {8AC5B908-634F-4263-8B2A-AC1596983A7F}
+		{5AB25BED-29CF-4016-A057-525D4035D371} = {6CFAB753-845B-41D1-A39A-3CCB9419DF1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84193001-D6D2-49BC-BDE6-975374A73E2E}
